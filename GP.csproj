@@ -1,0 +1,666 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{117FD993-D161-4D27-AD4C-5A9E29388ED2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GP</RootNamespace>
+    <AssemblyName>GPressing</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>false</GenerateManifests>
+    <ApplicationIcon>GPRESS.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.C1Flash, Version=1.0.20052.22, Culture=neutral, PublicKeyToken=45fc79e7d82d90d7">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\C1.C1Flash.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.C1PrintDocument, Version=1.0.20052.281, Culture=neutral, PublicKeyToken=1a6f4158ebe6d3b8">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\C1.C1PrintDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Common, Version=1.0.20031.116, Culture=neutral, PublicKeyToken=e272bb32d11b1948">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\C1.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Data, Version=1.0.20022.0, Culture=neutral, PublicKeyToken=900b028620cd3a1b">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\C1.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Chart, Version=1.0.20052.15115, Culture=neutral, PublicKeyToken=a22e16972c085838">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\C1.Win.C1Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Command, Version=1.0.20052.128, Culture=neutral, PublicKeyToken=e808566f358766d8">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\C1.Win.C1Command.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid, Version=2.5.20052.212, Culture=neutral, PublicKeyToken=c9c7ad9c0a5706c9">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\C1.Win.C1FlexGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Input, Version=1.0.20052.99, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\C1.Win.C1Input.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1List, Version=1.1.20052.78, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\C1.Win.C1List.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1PrintPreview, Version=1.0.20052.281, Culture=neutral, PublicKeyToken=3af768410ba0a64f">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\C1.Win.C1PrintPreview.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Report, Version=2.5.20052.176, Culture=neutral, PublicKeyToken=c9c7ad9c0a5706c9">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\C1.Win.C1Report.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1TrueDBGrid, Version=1.3.20052.50415, Culture=neutral, PublicKeyToken=75ae3fb0e2b1e0da">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\C1.Win.C1TrueDBGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\CrystalDecisions.Enterprise.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\CrystalDecisions.Enterprise.InfoStore.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=0.7.0.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Design">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing.Design">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArticleFacture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArticleFacture.Designer.cs">
+      <DependentUpon>ArticleFacture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BilanW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BilanW.Designer.cs">
+      <DependentUpon>BilanW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigSettings.cs" />
+    <Compile Include="DayReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DayReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DB_PostgreSQL.cs" />
+    <Compile Include="FactureParCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FactureParCode.Designer.cs">
+      <DependentUpon>FactureParCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAboutBox.Designer.cs">
+      <DependentUpon>frmAboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChargement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChargement.Designer.cs">
+      <DependentUpon>frmChargement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfiguration.Designer.cs">
+      <DependentUpon>frmConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFactureAjouterArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFactureAjouterArticle.Designer.cs">
+      <DependentUpon>frmFactureAjouterArticle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReglerCheque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReglerCheque.Designer.cs">
+      <DependentUpon>frmReglerCheque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReglerEspece.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReglerEspece.Designer.cs">
+      <DependentUpon>frmReglerEspece.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionArticle.Designer.cs">
+      <DependentUpon>GestionArticle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionClient.Designer.cs">
+      <DependentUpon>GestionClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionFacture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionFacture.Designer.cs">
+      <DependentUpon>GestionFacture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionFamille.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionFamille.Designer.cs">
+      <DependentUpon>GestionFamille.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionUtilisateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionUtilisateur.Designer.cs">
+      <DependentUpon>GestionUtilisateur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalVars.cs" />
+    <Compile Include="IndoFacture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IndoFacture.Designer.cs">
+      <DependentUpon>IndoFacture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoArticle.Designer.cs">
+      <DependentUpon>InfoArticle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoClient.Designer.cs">
+      <DependentUpon>InfoClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoFamille.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoFamille.Designer.cs">
+      <DependentUpon>InfoFamille.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoSociete.cs" />
+    <Compile Include="InfoUtilisateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoUtilisateur.Designer.cs">
+      <DependentUpon>InfoUtilisateur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListAF.cs" />
+    <Compile Include="Livraison.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Livraison.Designer.cs">
+      <DependentUpon>Livraison.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUtils.cs" />
+    <Compile Include="NouvelleCommande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NouvelleCommande.Designer.cs">
+      <DependentUpon>NouvelleCommande.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payement.Designer.cs">
+      <DependentUpon>Payement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintingW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintingW.Designer.cs">
+      <DependentUpon>PrintingW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ArticleFacture.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ArticleFacture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BilanW.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BilanW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DayReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DayReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactureParCode.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FactureParCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAboutBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChargement.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmChargement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfiguration.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFactureAjouterArticle.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFactureAjouterArticle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReglerCheque.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmReglerCheque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReglerEspece.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmReglerEspece.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionArticle.resx">
+      <DependentUpon>GestionArticle.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionClient.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GestionClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionFacture.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GestionFacture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionFamille.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GestionFamille.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionUtilisateur.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GestionUtilisateur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IndoFacture.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IndoFacture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoArticle.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InfoArticle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoClient.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InfoClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoFamille.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InfoFamille.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoUtilisateur.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InfoUtilisateur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Livraison.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Livraison.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NouvelleCommande.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NouvelleCommande.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payement.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Payement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintingW.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PrintingW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketClient.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TicketClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketClient.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TicketClient.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketPiece.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TicketPiece.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="TB_Artice.cs" />
+    <Compile Include="TB_Client.cs" />
+    <Compile Include="TB_Facture.cs" />
+    <Compile Include="TB_Famille.cs" />
+    <Compile Include="TB_User.cs" />
+    <Compile Include="TicketClient.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TicketClient.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TicketPiece.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TicketPiece.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_user.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_user.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_user.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_ok.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_cancel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BaseApplicationManifest Include="Properties\app.manifest" />
+    <None Include="Resources\exec.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sans titre-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sans titre-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sans titre-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_GP copie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\92.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greyscale_10.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greyscale_11.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greyscale_18.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greyscale_26.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greyscale_12.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greyscale_22.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greyscale_9.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greyscale_20.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bundle_256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bundle_048.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bundle_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\69.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bundle_0481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bundle_032.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MasterCard.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rouge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GPRESS.ico" />
+    <None Include="Resources\sig_Tips1.png" />
+    <None Include="Resources\sig_Tips.png" />
+    <None Include="Resources\IdenIMG.png" />
+    <None Include="Resources\desable_server.ico" />
+    <None Include="Resources\3.png" />
+    <None Include="Resources\Moins_Small.png" />
+    <None Include="Resources\Plus_small.png" />
+    <None Include="Resources\Moins1.png" />
+    <None Include="Resources\Plus1.png" />
+    <None Include="Resources\Moins.png" />
+    <None Include="Resources\Plus.png" />
+    <None Include="Resources\add_server.ico" />
+    <None Include="Resources\77.png" />
+    <None Include="Resources\sig.png" />
+    <None Include="Resources\siglogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
